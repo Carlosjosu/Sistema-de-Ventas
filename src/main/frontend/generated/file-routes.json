@@ -15,7 +15,7 @@
         "title": "Main"
       },
       {
-        "route": "Auto-list",
+        "route": "auto-list",
         "title": "Auto",
         "menu": {
           "icon": "vaadin:car",
@@ -26,7 +26,7 @@
         "params": {}
       },
       {
-        "route": "Favorito-list",
+        "route": "favorito-list",
         "title": "Favorito",
         "menu": {
           "icon": "vaadin:star",
@@ -37,7 +37,7 @@
         "params": {}
       },
       {
-        "route": "Imagen",
+        "route": "imagen-list",
         "title": "Imagen",
         "menu": {
           "icon": "vaadin:picture",
@@ -48,7 +48,7 @@
         "params": {}
       },
       {
-        "route": "Publicacion",
+        "route": "publicacion-list",
         "title": "Publicación",
         "menu": {
           "icon": "vaadin:book",
@@ -70,7 +70,7 @@
         "params": {}
       },
       {
-        "route": "Usuario-list",
+        "route": "usuario-list",
         "title": "Usuario",
         "menu": {
           "icon": "vaadin:user",
@@ -81,7 +81,7 @@
         "params": {}
       },
       {
-        "route": "Venta",
+        "route": "venta-list",
         "title": "Venta",
         "menu": {
           "icon": "vaadin:dollar",

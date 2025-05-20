@@ -32,7 +32,6 @@ function AutoEntryForm(props: AutoEntryFormProps) {
   const tipoCombustible = useSignal('');
   const dialogOpened = useSignal(false);
 
-  // Listas para ComboBox
   const listaCategoria = useSignal<string[]>([]);
   const listaTipoCombustible = useSignal<string[]>([]);
 
@@ -51,16 +50,8 @@ function AutoEntryForm(props: AutoEntryFormProps) {
       const precioVal = Number(precio.value);
       const kilometrajeVal = Number(kilometraje.value);
 
-      if (
-        marca.value.trim() &&
-        !isNaN(anioVal) && anio.value !== '' &&
-        !isNaN(precioVal) && precio.value !== '' &&
-        !isNaN(kilometrajeVal) && kilometraje.value !== '' &&
-        color.value.trim() &&
-        matricula.value.trim() &&
-        categoria.value.trim() &&
-        tipoCombustible.value.trim()
-      ) {
+      if (marca.value.trim() && !isNaN(anioVal) && anio.value !== '' && !isNaN(precioVal) && precio.value !== '' && !isNaN(kilometrajeVal) && 
+        kilometraje.value !== '' && color.value.trim() && matricula.value.trim() && categoria.value.trim() && tipoCombustible.value.trim()) {
         await AutoService.create(
           marca.value,
           anioVal,
@@ -122,7 +113,6 @@ function AutoEntryForm(props: AutoEntryFormProps) {
   );
 }
 
-// LISTA DE AUTOS
 export default function AutoView() {
   const dataProvider = useDataProvider<any>({
     list: async () => {

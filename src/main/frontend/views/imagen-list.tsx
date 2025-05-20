@@ -27,7 +27,6 @@ function ImagenEntryForm(props: ImagenEntryFormProps) {
   const auto = useSignal('');
   const dialogOpened = useSignal(false);
 
-  // Cargar autos para el ComboBox
   const autos = useSignal<{ value: string, label: string }[]>([]);
 
   useEffect(() => {
@@ -100,7 +99,6 @@ function ImagenEntryForm(props: ImagenEntryFormProps) {
   );
 }
 
-// LISTA DE IMÁGENES
 export default function ImagenView() {
   const dataProvider = useDataProvider<any>({
     list: async () => {

@@ -27,7 +27,6 @@ function FavoritoEntryForm(props: FavoritoEntryFormProps) {
   const fechaMarcado = useSignal('');
   const dialogOpened = useSignal(false);
 
-  // Cargar usuarios y publicaciones para los ComboBox
   const usuarios = useSignal<{ value: string, label: string }[]>([]);
   const publicaciones = useSignal<{ value: string, label: string }[]>([]);
 
@@ -48,11 +47,7 @@ function FavoritoEntryForm(props: FavoritoEntryFormProps) {
 
   const createFavorito = async () => {
     try {
-      if (
-        usuario.value &&
-        publicacion.value &&
-        fechaMarcado.value
-      ) {
+      if (usuario.value && publicacion.value && fechaMarcado.value) {
         const idUsuario = parseInt(usuario.value) + 1;
         const idPublicacion = parseInt(publicacion.value) + 1;
         await FavoritoService.create(
@@ -119,7 +114,6 @@ function FavoritoEntryForm(props: FavoritoEntryFormProps) {
   );
 }
 
-// LISTA DE FAVORITOS
 export default function FavoritoView() {
   const dataProvider = useDataProvider<any>({
     list: async () => {

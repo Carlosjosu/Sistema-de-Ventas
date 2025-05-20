@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
 import { ViewConfig } from '@vaadin/hilla-file-router/types.js';
-import { Button, Grid, GridColumn, TextField, VerticalLayout, Dialog } from '@vaadin/react-components'; // Añadido Dialog, eliminado DatePicker y ComboBox
+import { Button, Grid, GridColumn, TextField, VerticalLayout, Dialog, PasswordField } from '@vaadin/react-components';
 import { Notification } from '@vaadin/react-components/Notification';
 import { UsuarioService } from 'Frontend/generated/endpoints';
 import { useSignal } from '@vaadin/hilla-react-signals';
 import handleError from 'Frontend/views/_ErrorHandler';
 import { Group, ViewToolbar } from 'Frontend/components/ViewToolbar';
 import { useDataProvider } from '@vaadin/hilla-react-crud';
-// import { useEffect } from 'react'; // Eliminado porque no se usa
-import type { GridItemModel } from '@vaadin/react-components'; // Añadido import de GridItemModel
-
-// ...resto del código sin cambios...
+import type { GridItemModel } from '@vaadin/react-components';
+import { Email } from '@vaadin/hilla-lit-form';
 
 export const config: ViewConfig = {
   title: 'Usuario',
@@ -78,12 +76,12 @@ function UsuarioEntryForm(props: UsuarioEntryFormProps) {
             value={nombre.value}
             onValueChanged={(evt: CustomEvent<{ value: string }>) => (nombre.value = evt.detail.value)}
           />
-          <TextField
+          <Emailf
             label="Correo"
             value={correo.value}
             onValueChanged={(evt: CustomEvent<{ value: string }>) => (correo.value = evt.detail.value)}
           />
-          <TextField
+          <PasswordField
             label="Contrasena"
             value={contrasenia.value}
             onValueChanged={(evt: CustomEvent<{ value: string }>) => (contrasenia.value = evt.detail.value)}
@@ -100,7 +98,6 @@ function UsuarioEntryForm(props: UsuarioEntryFormProps) {
   );
 }
 
-// LISTA DE USUARIOS
 export default function UsuarioView() {
   const dataProvider = useDataProvider<any>({
     list: async () => {

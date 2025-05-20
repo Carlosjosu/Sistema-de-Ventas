@@ -30,7 +30,6 @@ function PublicacionEntryForm(props: PublicacionEntryFormProps) {
   const vendedor = useSignal('');
   const dialogOpened = useSignal(false);
 
-  // Listas para ComboBox
   const autos = useSignal<{ value: string, label: string }[]>([]);
   const vendedores = useSignal<{ value: string, label: string }[]>([]);
   const estados = useSignal<string[]>([]);
@@ -151,7 +150,6 @@ function PublicacionEntryForm(props: PublicacionEntryFormProps) {
   );
 }
 
-// LISTA DE PUBLICACIONES
 export default function PublicacionView() {
   const dataProvider = useDataProvider<any>({
     list: async () => {

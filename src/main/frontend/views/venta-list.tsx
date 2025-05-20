@@ -28,7 +28,6 @@ function VentaEntryForm(props: VentaEntryFormProps) {
   const publicacion = useSignal('');
   const dialogOpened = useSignal(false);
 
-  // Cargar compradores y publicaciones para los ComboBox
   const compradores = useSignal<{ value: string, label: string }[]>([]);
   const publicaciones = useSignal<{ value: string, label: string }[]>([]);
 
@@ -50,12 +49,7 @@ function VentaEntryForm(props: VentaEntryFormProps) {
   const createVenta = async () => {
     try {
       const precio = parseFloat(precioVenta.value);
-      if (
-        !isNaN(precio) &&
-        fechaVenta.value &&
-        comprador.value &&
-        publicacion.value
-      ) {
+      if (!isNaN(precio) && fechaVenta.value && comprador.value && publicacion.value) {
         const idComprador = parseInt(comprador.value) + 1;
         const idPublicacion = parseInt(publicacion.value) + 1;
         await VentaService.create(
@@ -129,7 +123,6 @@ function VentaEntryForm(props: VentaEntryFormProps) {
   );
 }
 
-// LISTA DE VENTAS
 export default function VentaView() {
   const dataProvider = useDataProvider<any>({
     list: async () => {
