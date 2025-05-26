@@ -5,57 +5,54 @@ import java.util.List;
 public class Usuario {
     private Integer id;
     private String nombre;
-    private String correo;
-    private String contrasenia;
-    private Boolean esAdministrador;
+    private String apellido;
+    private String cedula;
     private String telefono;
+    private boolean esAdministrador= false;
 
-    public Integer getId() {
-        return this.id;
+    public Usuario(Integer id, String nombre, String apellido, String cedula, String telefono, boolean esAdministrador) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.telefono = telefono;
+        this.esAdministrador = esAdministrador;
     }
-
+    public Integer getId() {
+        return id;
+    }
     public void setId(Integer id) {
         this.id = id;
     }
-
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getCorreo() {
-        return this.correo;
+    public String getApellido() {
+        return apellido;
     }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
-
-    public String getContrasenia() {
-        return this.contrasenia;
+    public String getCedula() {
+        return cedula;
     }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
-
-    public Boolean getEsAdministrador() {
-        return this.esAdministrador;
-    }
-
-    public void setEsAdministrador(Boolean esAdministrador) {
-        this.esAdministrador = esAdministrador;
-    }
-
     public String getTelefono() {
-        return this.telefono;
+        return telefono;
     }
-
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+    public boolean isEsAdministrador() {
+        return esAdministrador;
+    }
+    public void setEsAdministrador(boolean esAdministrador) {
+        this.esAdministrador = esAdministrador;
+    }
+
 }

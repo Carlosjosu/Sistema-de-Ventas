@@ -1,89 +1,88 @@
 package com.unl.sistema.base.models;
 
 import java.util.List;
+import java.util.Date;
 
 public class Auto {
-    private Integer id;
-    private String marca;
-    private int anio;
-    private float precio;
-    private float kilometraje;
-    private String color;
-	private String matricula;
-    private CategoriaEnum categoria;
-    private TipoCombustibleEnum tipoCombustible;
+	private Integer id;
+	private String anio;
+	private String modelo;
+	private String color;
+	private Float kilometraje;
+	private Double precio;
+	private String codigoVIN;
+	private String descripcion;
+	private Date fechaRegistro;
+	private boolean estaDisponible = true;
 
 
-	public Integer getId() {
-		return this.id;
+	public Auto(Integer id, String marca, String modelo, String color, String placa, Integer anio, Double precio, String descripcion, List<String> imagenes) {
+		this.id = id;
+		this.anio = anio.toString();
+		this.modelo = modelo;
+		this.color = color;
+		this.precio = precio;
+		this.descripcion = descripcion;
+		this.fechaRegistro = new Date();
 	}
-
+	public Integer getId() {
+		return id;
+	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
-	public String getMarca() {
-		return this.marca;
+	public String getAnio() {
+		return anio;
 	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public int getAnio() {
-		return this.anio;
-	}
-
-	public void setAnio(int anio) {
+	public void setAnio(String anio) {
 		this.anio = anio;
 	}
-
-	public float getPrecio() {
-		return this.precio;
+	public String getModelo() {
+		return modelo;
 	}
-
-	public void setPrecio(float precio) {
-		this.precio = precio;
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
-
-	public float getKilometraje() {
-		return this.kilometraje;
-	}
-
-	public void setKilometraje(float kilometraje) {
-		this.kilometraje = kilometraje;
-	}
-
 	public String getColor() {
-		return this.color;
+		return color;
 	}
-
 	public void setColor(String color) {
 		this.color = color;
 	}
-
-	public String getMatricula() {
-		return this.matricula;
+	public Float getKilometraje() {
+		return kilometraje;
 	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setKilometraje(Float kilometraje) {
+		this.kilometraje = kilometraje;
 	}
-
-	public CategoriaEnum getCategoria() {
-		return this.categoria;
+	public Double getPrecio() {
+		return precio;
 	}
-
-	public void setCategoria(CategoriaEnum categoria) {
-		this.categoria = categoria;
+	public void setPrecio(Double precio) {
+		this.precio = precio;
 	}
-
-	public TipoCombustibleEnum getTipoCombustible() {
-		return this.tipoCombustible;
+	public String getCodigoVIN() {
+		return codigoVIN;
 	}
-
-	public void setTipoCombustible(TipoCombustibleEnum tipoCombustible) {
-		this.tipoCombustible = tipoCombustible;
+	public void setCodigoVIN(String codigoVIN) {
+		this.codigoVIN = codigoVIN;
 	}
-
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public Date getFechaRegistro() {
+		return fechaRegistro;
+	}
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+	public boolean isEstaDisponible() {
+		return estaDisponible;
+	}
+	public void setEstaDisponible(boolean estaDisponible) {
+		this.estaDisponible = estaDisponible;
+	}
 }

@@ -4,40 +4,30 @@ import java.util.Date;
 
 public class Favorito{
     private Integer id;
-    private Date fechaMarcado;
-    private Integer idUsuario;
-    private Integer idPublicacion;
+    private Date fechaGuardado ;
+    private Integer idAuto;
 
-    public Integer getId() {
-        return this.id;
+    public Favorito(Integer id, Date fechaGuardado, Integer idAuto, Integer idUsuario) {
+        this.id = id;
+        this.fechaGuardado = fechaGuardado;
+        this.idAuto = idAuto;
     }
-
+    public Integer getId() {
+        return id;
+    }
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public Date getFechaMarcado() {
-        return this.fechaMarcado;
+    public Date getFechaGuardado() {
+        return fechaGuardado;
     }
-
-    public void setFechaMarcado(Date fechaMarcado) {
-        this.fechaMarcado = fechaMarcado;
+    public void setFechaGuardado(Date fechaGuardado) {
+        this.fechaGuardado = fechaGuardado;
     }
-
-    public Integer getIdUsuario() {
-        return this.idUsuario;
+    public Integer getIdAuto() {
+        return idAuto;
     }
-
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setIdAuto(Integer idAuto) {
+        this.idAuto = idAuto;
     }
-
-    public Integer getIdPublicacion() {
-        return this.idPublicacion;
-    }
-
-    public void setIdPublicacion(Integer idPublicacion) {
-        this.idPublicacion = idPublicacion;
-    }
-
 }
